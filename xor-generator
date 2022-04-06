@@ -1,0 +1,28 @@
+#!/usr/bin/python -tt
+# Basic cli wrapper for performing XOR on input string values
+# TODO: Implement cascading for repeat keys shorter than plaintext
+
+import sys
+
+def usage():
+    print("Usage: python[3] xor-generator.py <plaintext> <key>")
+    quit()
+
+try:
+    plaintext = sys.argv[1]
+    key = sys.argv[2]
+except:
+    usage()
+
+def xor(p, k):
+    zipped = zip(p, k)
+    result = []
+    for t in zipped:
+        result.append(chr(ord(t[0]) ^ ord(t[1])))
+    return result
+
+if __name__=="__main__":
+    print("".join(xor(plaintext, key)))
+else:
+    # This is what happens if imported
+    pass
