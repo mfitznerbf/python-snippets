@@ -45,10 +45,6 @@ def main():
     print("=Body=")
     print(r.text)
 
-
-
-
-
 if __name__=="__main__":
     # This is what happens if run as a script
     main()
